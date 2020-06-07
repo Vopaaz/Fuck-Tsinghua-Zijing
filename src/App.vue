@@ -1,11 +1,11 @@
 <template>
   <div id="app">
     <div v-if="atQrPage">
-      <img id="bg-img" src="./assets/qrcode.png" @click="toOutgoingPage" />
+      <img id="bg-img" src="./assets/qrcode-cropped.png" @click="toOutgoingPage" />
       <span id="time-str">{{ timeStr }}</span>
     </div>
     <div v-else>
-      <img id="bg-img-outgoing" src="./assets/outgoing.png" @click="toQrPage" />
+      <img id="bg-img-outgoing" src="./assets/outgoing-cropped.png" @click="toQrPage" />
       <span id="time-str">{{ timeStr }}</span>
     </div>
   </div>
