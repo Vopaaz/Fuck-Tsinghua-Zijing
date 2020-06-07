@@ -1,7 +1,13 @@
 <template>
   <div id="app">
-    <img id="bg-img" src="./assets/qrcode.png" />
-    <span id="time-str">{{ timeStr }}</span>
+    <div v-if="atQrPage">
+      <img id="bg-img" src="./assets/qrcode.png" @click="toOutgoingPage" />
+      <span id="time-str">{{ timeStr }}</span>
+    </div>
+    <div v-else>
+      <img id="bg-img-outgoing" src="./assets/outgoing.png" @click="toQrPage" />
+      <span id="time-str">{{ timeStr }}</span>
+    </div>
   </div>
 </template>
 
@@ -11,7 +17,8 @@ export default {
   components: {},
   data: function() {
     return {
-      timeStr: undefined
+      timeStr: undefined,
+      atQrPage: true
     };
   },
   mounted() {
@@ -19,6 +26,14 @@ export default {
       const date = new Date();
       this.timeStr = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
     });
+  },
+  methods: {
+    toOutgoingPage() {
+      this.atQrPage = false;
+    },
+    toQrPage(){
+      this.atQrPage = true;
+    }
   }
 };
 </script>
@@ -30,18 +45,39 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 0px;
+  margin: 0px;
 }
 
 #bg-img {
-  margin: 0px;
+  min-height: 100%;
+
+  /* Set up proportionate scaling */
   width: 100%;
+  height: auto;
+
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
-#time-str{
+#bg-img-outgoing {
+  min-height: 100%;
+
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#time-str {
   position: absolute;
   left: 28%;
-  top: 53%;
+  top: 57%;
   color: grey;
   font-size: 21px;
 }
