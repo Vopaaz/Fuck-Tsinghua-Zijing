@@ -24,14 +24,22 @@ export default {
   mounted() {
     setInterval(() => {
       const date = new Date();
-      this.timeStr = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+      this.timeStr = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()} ${date.getHours()}:${
+        date.getMinutes().toString().length === 1
+          ? "0" + date.getMinutes().toString()
+          : date.getMinutes().toString()
+      }:${
+        date.getSeconds().toString().length === 1
+          ? "0" + date.getSeconds().toString()
+          : date.getSeconds().toString()
+      }`;
     });
   },
   methods: {
     toOutgoingPage() {
       this.atQrPage = false;
     },
-    toQrPage(){
+    toQrPage() {
       this.atQrPage = true;
     }
   }
