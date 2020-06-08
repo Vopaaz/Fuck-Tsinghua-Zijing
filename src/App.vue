@@ -5,7 +5,7 @@
       <span id="time-str">{{ timeStr }}</span>
     </div>
     <div v-else>
-      <img id="bg-img-outgoing" src="./assets/outgoing-cropped.png" @click="toQrPage" />
+      <img id="bg-img-outgoing" src="./assets/outgoing-cropped-address.png" @click="toQrPage" />
       <span id="time-str">{{ timeStr }}</span>
     </div>
   </div>
