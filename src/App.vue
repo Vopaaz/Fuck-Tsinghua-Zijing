@@ -24,7 +24,8 @@ export default {
   mounted() {
     setInterval(() => {
       const date = new Date();
-      this.timeStr = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()} ${date.getHours()}:${
+      this.timeStr = `${date.getFullYear()}-${date.getMonth() +
+        1}-${date.getDate()} ${date.getHours()}:${
         date.getMinutes().toString().length === 1
           ? "0" + date.getMinutes().toString()
           : date.getMinutes().toString()
