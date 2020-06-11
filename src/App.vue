@@ -25,7 +25,11 @@ export default {
     setInterval(() => {
       const date = new Date();
       this.timeStr = `${date.getFullYear()}-${date.getMonth() +
-        1}-${date.getDate()} ${date.getHours()}:${
+        1}-${date.getDate()} ${
+        date.getHours().toString().length === 1
+          ? "0" + date.getHours().toString()
+          : date.getHours().toString()
+      }:${
         date.getMinutes().toString().length === 1
           ? "0" + date.getMinutes().toString()
           : date.getMinutes().toString()
