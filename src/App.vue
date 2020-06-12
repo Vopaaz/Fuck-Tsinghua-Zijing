@@ -76,9 +76,9 @@ export default {
 
 .time-str {
   position: absolute;
-  left: 23%;
+  left: 24.25%;
   color: grey;
-  font-size: 24px;
+  font-size: 22px;
 }
 
 .main {
@@ -92,6 +92,6 @@ export default {
   /* For iphone, confirmed */
   /* top: 50.9%; */
   /* For xiaomi, confirmed */
-  top: 56.75%;
+  top: 56.7%;
 }
 </style>
