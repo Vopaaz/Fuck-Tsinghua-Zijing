@@ -1,12 +1,12 @@
 <template>
   <div id="app">
     <div v-if="atQrPage">
-      <img id="bg-img" src="./assets/qrcode-cropped.png" @click="toOutgoingPage" />
-      <span id="time-str">{{ timeStr }}</span>
+      <img id="bg-img" src="./assets/main.png" @click="toOutgoingPage" />
+      <span class="time-str main" id="time-str">{{ timeStr }}</span>
     </div>
     <div v-else>
-      <img id="bg-img-outgoing" src="./assets/outgoing-cropped-address.png" @click="toQrPage" />
-      <span id="time-str">{{ timeStr }}</span>
+      <img id="bg-img-outgoing" src="./assets/outgoing.png" @click="toQrPage" />
+      <span class="time-str outgoing" id="time-str">{{ timeStr }}</span>
     </div>
   </div>
 </template>
@@ -87,14 +87,24 @@ export default {
   left: 0;
 }
 
-#time-str {
+.time-str {
   position: absolute;
   left: 23%;
-  /* For iphone, confirmed */
-  /* top: 54%; */
-  /* For xiaomi, confirmed */
-  top: 65%;
   color: grey;
   font-size: 24px;
+}
+
+.main {
+  /* For iphone, confirmed */
+  /* top: 51.7%; */
+  /* For xiaomi, confirmed */
+  top: 62%;
+}
+
+.outgoing {
+  /* For iphone, confirmed */
+  /* top: 51%; */
+  /* For xiaomi, confirmed */
+  top: 61.85%;
 }
 </style>
