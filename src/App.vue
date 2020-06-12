@@ -1,11 +1,11 @@
 <template>
   <div id="app">
     <div v-if="atQrPage">
-      <img class="bg-img" src="./assets/main.png" @click="toOutgoingPage" />
+      <img class="bg-img" src="./assets/main-redmi.png" @click="toOutgoingPage" />
       <span class="time-str main" id="time-str">{{ timeStr }}</span>
     </div>
     <div v-else>
-      <img class="bg-img" src="./assets/outgoing.png" @click="toQrPage" />
+      <img class="bg-img" src="./assets/outgoing-redmi.png" @click="toQrPage" />
       <span class="time-str outgoing" id="time-str">{{ timeStr }}</span>
     </div>
   </div>
@@ -85,13 +85,13 @@ export default {
   /* For iphone, confirmed */
   /* top: 51.2%; */
   /* For xiaomi, confirmed */
-  top: 62%;
+  top: 57.5%;
 }
 
 .outgoing {
   /* For iphone, confirmed */
   /* top: 50.9%; */
   /* For xiaomi, confirmed */
-  top: 61.85%;
+  top: 56.75%;
 }
 </style>
