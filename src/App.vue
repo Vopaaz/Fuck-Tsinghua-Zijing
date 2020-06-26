@@ -4,9 +4,13 @@
       <img class="bg-img" src="./assets/main-redmi.png" @click="toOutgoingPage" />
       <span class="time-str main" id="time-str">{{ timeStr }}</span>
     </div>
+    <div v-else-if="atSidedoor">
+      <img class="bg-img" src="./assets/outgoing-sidedoor-redmi.png" @click="toQrPage" />
+      <span class="time-str outgoing" id="time-str" @click="switchDoor">{{ timeStr }}</span>
+    </div>
     <div v-else>
       <img class="bg-img" src="./assets/outgoing-redmi.png" @click="toQrPage" />
-      <span class="time-str outgoing" id="time-str">{{ timeStr }}</span>
+      <span class="time-str outgoing" id="time-str" @click="switchDoor">{{ timeStr }}</span>
     </div>
   </div>
 </template>
@@ -18,7 +22,8 @@ export default {
   data: function() {
     return {
       timeStr: undefined,
-      atQrPage: true
+      atQrPage: true,
+      atSidedoor: false
     };
   },
   mounted() {
@@ -38,7 +43,7 @@ export default {
           ? "0" + date.getSeconds().toString()
           : date.getSeconds().toString()
       }`;
-    });
+    }, 1000);
   },
   methods: {
     toOutgoingPage() {
@@ -46,6 +51,9 @@ export default {
     },
     toQrPage() {
       this.atQrPage = true;
+    },
+    switchDoor() {
+      this.atSidedoor = !this.atSidedoor;
     }
   }
 };
