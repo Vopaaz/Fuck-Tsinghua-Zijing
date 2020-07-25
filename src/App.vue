@@ -91,14 +91,14 @@ export default {
 
 .main {
   /* For iphone, confirmed */
-  top: 49.9%;
+  top: 49.8%;
   /* For xiaomi, confirmed */
   /* top: 57.5%; */
 }
 
 .outgoing {
   /* For iphone, confirmed */
-  top: 49.3%;
+  top: 49.2%;
   /* For xiaomi, confirmed */
   /* top: 56.7%; */
 }
