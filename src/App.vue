@@ -84,22 +84,32 @@ export default {
 
 .time-str {
   position: absolute;
-  left: 24.25%;
+  /* iPhone X or Xiaomi */
+  /* left: 25%; */
+  left: 26.75%;
   color: grey;
   font-size: 22px;
 }
 
 .main {
-  /* For iphone, confirmed */
+  /* For iPhone X */
   /* top: 49.8%; */
-  /* For xiaomi, confirmed */
-  top: 57.5%;
+
+  /* For iPhone 11 */
+  top: 49.5%;
+
+  /* For xiaomi */
+  /* top: 57.5%; */
 }
 
 .outgoing {
   /* For iphone, confirmed */
   /* top: 49.2%; */
+
+  /* For iPhone 11 */
+  top: 48.9%;
+
   /* For xiaomi, confirmed */
-  top: 56.7%;
+  /* top: 56.7%; */
 }
 </style>
